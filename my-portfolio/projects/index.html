@@ -6,16 +6,27 @@
   <main class="projects-page">
     <section class="projects-section" aria-labelledby="projects-title">
       <div class="projects-intro"><div><p class="section-kicker">My Work</p><h1 id="projects-title">A Showcase of<br>My best projects</h1><p>Here are some of the projects i have worked on from websites, to designs, each one reflect my skills and passion.</p></div>
-        <div class="project-filters" role="group" aria-label="Filter projects"><button class="filter-button is-selected" type="button" data-filter="all" aria-pressed="true">All</button><button class="filter-button" type="button" data-filter="web" aria-pressed="false">Web dev</button><button class="filter-button" type="button" data-filter="uiux" aria-pressed="false">UI/UX</button><button class="filter-button" type="button" data-filter="graphic" aria-pressed="false">Graphic</button></div>
+        <div class="project-filters" role="group" aria-label="Filter projects"><button class="filter-button is-selected" type="button" data-filter="all" aria-pressed="true">All</button><button class="filter-button" type="button" data-filter="web" aria-pressed="false">Web dev</button><button class="filter-button" type="button" data-filter="uiux" aria-pressed="false">UI/UX</button><button class="filter-button" type="button" data-filter="graphic" aria-pressed="false">Graphic</button><button class="filter-button" type="button" data-filter="brand" aria-pressed="false">Logo</button><button class="filter-button" type="button" data-filter="video" aria-pressed="false">Video Editing</button><button class="filter-button" type="button" data-filter="marketing" aria-pressed="false">Marketing</button></div>
       </div>
       <div class="project-grid">
-        <article class="project-card" data-category="web"><img src="../images/project-web-design.png" alt="Website design project preview"><div><h2>Web Design</h2><p>Responsive and modern websites for businesses and more...</p><a href="../contact/index.html">Learn more...</a></div></article>
-        <article class="project-card" data-category="graphic"><img src="../images/project-brand-logos.png" alt="Brand logo project preview"><div><h2>Brand Logos</h2><p>Modern and attractive logo for brands and start ups...</p><a href="../contact/index.html">Learn more...</a></div></article>
-        <article class="project-card" data-category="graphic"><img src="../images/project-graphic-design.png" alt="Graphic design project preview"><div><h2>Graphic Design</h2><p>Design great business flyers, wedding, birthday, banners, and cover pages ...</p><a href="../contact/index.html">Learn more...</a></div></article>
-        <article class="project-card" data-category="graphic"><img src="../images/project-video-editing.png" alt="Video camera mounted on a drone"><div><h2>Video editing</h2><p>Swift and attractive videos for businesses and events giving a feeling that you will never forget.</p><a href="../contact/index.html">Learn more...</a></div></article>
-        <article class="project-card" data-category="graphic"><img src="../images/project-branding.png" alt="Emmanuel's Code brand logo"><div><h2>Branding &amp; Marketing</h2><p>Beautiful, modern and responsive websites.</p><a href="../contact/index.html">Learn more...</a></div></article>
-        <article class="project-card" data-category="uiux" aria-label="Project information is incomplete in the design reference"><img src="../images/project-uiux.png" alt="Magenta project-image placeholder shown in the design"><div><p>Beautiful, modern and responsive websites.</p><a href="../contact/index.html">Learn more...</a></div></article>
+        <article class="project-card" data-category="web"><img src="../images/project-web-design.png" alt="Website design project preview"><div><h2>Web Design</h2><p>Responsive and modern websites for businesses and more...</p><button class="see-album-button" type="button" data-gallery-category="web">See album</button></div></article>
+        <article class="project-card" data-category="brand"><img src="../images/project-brand-logos.png" alt="Brand logo project preview"><div><h2>Brand Logos</h2><p>Modern and attractive logo for brands and start ups...</p><button class="see-album-button" type="button" data-gallery-category="brand">See album</button></div></article>
+        <article class="project-card" data-category="graphic"><img src="../images/project-graphic-design.png" alt="Graphic design project preview"><div><h2>Graphic Design</h2><p>Design great business flyers, wedding, birthday, banners, and cover pages ...</p><button class="see-album-button" type="button" data-gallery-category="graphic">See album</button></div></article>
+        <article class="project-card" data-category="video"><img src="../images/project-video-editing.png" alt="Video camera mounted on a drone"><div><h2>Video editing</h2><p>Swift and attractive videos for businesses and events giving a feeling that you will never forget.</p><button class="see-album-button" type="button" data-gallery-category="video">See album</button></div></article>
+        <article class="project-card" data-category="marketing"><img src="../images/project-branding.png" alt="Emmanuel's Code brand logo"><div><h2>Branding &amp; Marketing</h2><p>Beautiful, modern and responsive websites.</p><button class="see-album-button" type="button" data-gallery-category="marketing">See album</button></div></article>
+        <article class="project-card" data-category="uiux"><img src="ui/ux-picture1.png" alt="UI/UX project preview"><div><h2>UI/UX Design</h2><p>Beautiful, modern and responsive designs.</p><button class="see-album-button" type="button" data-gallery-category="uiux">See album</button></div></article>
+        <article class="project-card" data-category="uiux"><img src="ui/ux-picture2.png" alt="Second UI/UX project preview"><div><h2>UI/UX Design</h2><p>Beautiful, modern and responsive designs.</p><button class="see-album-button" type="button" data-gallery-category="uiux">See album</button></div></article>
       </div>
+      <section class="project-gallery" id="project-gallery" aria-labelledby="project-gallery-title" aria-live="polite" hidden>
+        <h2 id="project-gallery-title"></h2>
+        <div class="project-gallery-grid"></div>
+      </section>
+      <dialog class="project-lightbox" aria-labelledby="project-lightbox-caption">
+        <button class="project-lightbox-close" type="button" aria-label="Close image viewer">&times;</button>
+        <button class="project-lightbox-previous" type="button" aria-label="Previous image">&#8592;</button>
+        <figure><img class="project-lightbox-image" alt=""><figcaption id="project-lightbox-caption"></figcaption></figure>
+        <button class="project-lightbox-next" type="button" aria-label="Next image">&#8594;</button>
+      </dialog>
     </section>
   </main>
   <div data-site-footer></div>

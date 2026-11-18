@@ -45,15 +45,17 @@ function pageUrl(page) {
   return `${pageRoot}${pageRoutes[page]}`;
 }
 
-function socialIcon(name) {
+function socialIcon(name, extraClass = '') {
   const icons = {
-    instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>',
-    linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM2.5 9h3v12h-3zM8 9h3v1.7c.7-1.2 1.8-2 3.5-2 3.2 0 4.5 2 4.5 5.4V21h-3v-6.1c0-1.7-.4-3-2.2-3-1.7 0-2.8 1.2-2.8 3V21H8z"/></svg>',
-    facebook: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1a11 11 0 1 0 6.8 19.6v-7.2h-2.6v-3h2.6V8.2c0-2.6 1.5-4 3.8-4 .8 0 1.6.1 2 .2v2.7h-1.6c-1.3 0-1.6.6-1.6 1.6v1.7h3l-.4 3h-2.6v8.1A11 11 0 0 0 12 1Z"/></svg>',
-    whatsapp: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.4-4.6a8.5 8.5 0 1 1 16.1-4.2Z"/><path d="M9 8.3c.3-.4.6-.4.9-.4l.5.1 1 2.2c.1.2.1.4 0 .6l-.5.7c-.2.2-.2.4-.1.6a6 6 0 0 0 2.8 2.8c.2.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l2.1 1c.3.1.4.3.4.5 0 .4-.2 1.2-.8 1.7-.6.6-1.5.8-2.5.5-1-.3-2.2-.8-3.8-2.2a13 13 0 0 1-2.9-3.4c-.7-1.4-.3-2.7.2-3.4Z"/></svg>',
-    tiktok: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3v11.2a4.8 4.8 0 1 1-4-4.73v3.2a1.7 1.7 0 1 0 1.1 1.6V3h2.9c.3 2.3 1.6 3.7 4 4v3a8 8 0 0 1-4-1.3"/></svg>'
+    instagram: '<svg class="social-icon social-icon-instagram" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="instagram-dot" cx="17.5" cy="6.5" r="1"/></svg>',
+    linkedin: '<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 7.8a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4ZM3.3 9.4h3.8v11.3H3.3zM9.1 9.4h3.6V11h.1a4 4 0 0 1 3.6-2c3.9 0 4.6 2.5 4.6 5.7v6h-3.8v-5.3c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9v5.4H9.1z"/></svg>',
+    facebook: '<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.6V3.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.3H8v3.1h2.4v8h3Z"/></svg>',
+    whatsapp: '<svg class="social-icon social-icon-whatsapp" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.4-4.6a8.5 8.5 0 1 1 16.1-4.2Z"/><path class="whatsapp-phone" d="M9 8.3c.3-.4.6-.4.9-.4l.5.1 1 2.2c.1.2.1.4 0 .6l-.5.7c-.2.2-.2.4-.1.6a6 6 0 0 0 2.8 2.8c.2.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l2.1 1c.3.1.4.3.4.5 0 .4-.2 1.2-.8 1.7-.6.6-1.5.8-2.5.5-1-.3-2.2-.8-3.8-2.2a13 13 0 0 1-2.9-3.4c-.7-1.4-.3-2.7.2-3.4Z"/></svg>',
+    tiktok: '<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 2h-3.2v13.2a3 3 0 1 1-2.6-3v-3.3a6.2 6.2 0 1 0 5.8 6.2V8.2a8.1 8.1 0 0 0 4.1 1.1V6.1A4.8 4.8 0 0 1 16 2Z"/></svg>',
+    github: '<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 .1.9 2.03 3.27 1.45.1-.72.4-1.22.71-1.5-2.48-.28-5.08-1.25-5.08-5.53 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.42.11-2.96 0 0 .95-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.62 1.54.23 2.68.12 2.96.72.78 1.15 1.78 1.15 3.01 0 4.28-2.6 5.24-5.1 5.52.4.35.76 1.03.76 2.08v3.07c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"/></svg>'
   };
-  return icons[name] || '';
+  if (!icons[name]) return '';
+  return extraClass ? icons[name].replace('class="social-icon', `class="social-icon ${extraClass}`) : icons[name];
 }
 
 function socialBadge(name, label) {
@@ -77,6 +79,17 @@ if (headerTarget) {
 const footerTarget = document.querySelector('[data-site-footer]');
 if (footerTarget) {
   footerTarget.innerHTML = `<footer class="site-footer"><a class="footer-brand" href="${pageUrl('home')}"><img src="${pageRoot}images/logo.png" alt=""><span>EMMANUEL's CODE<br><b>Graphic_Hub</b></span></a><nav aria-label="Footer navigation">${Object.keys(pageRoutes).map((page) => `<a href="${pageUrl(page)}">${pageLabels[page]}</a>`).join('')}</nav><div class="footer-socials">${socialBadge('instagram', 'Instagram')}${socialBadge('linkedin', 'LinkedIn')}${socialBadge('facebook', 'Facebook')}${socialBadge('whatsapp', 'WhatsApp')}</div><p>2026 All rights reserved: <span>Emmanuel chi</span></p></footer>`;
+}
+
+document.querySelectorAll('[data-brand-icon]').forEach((placeholder) => {
+  placeholder.outerHTML = socialIcon(placeholder.dataset.brandIcon, placeholder.className);
+});
+
+const contactSocialsTarget = document.querySelector('[data-contact-socials]');
+if (contactSocialsTarget) {
+  const contactSocials = ['tiktok', 'linkedin', 'instagram', 'github'];
+  const labels = { tiktok: 'TikTok', linkedin: 'LinkedIn', instagram: 'Instagram', github: 'GitHub' };
+  contactSocialsTarget.innerHTML = contactSocials.map((name) => socialBadge(name, labels[name])).join('');
 }
 
 const status = document.createElement('p');
@@ -115,23 +128,165 @@ if (imageTrack) {
   }
 }
 
+const projectLightbox = document.querySelector('.project-lightbox');
+let lightboxImages = [];
+let lightboxIndex = 0;
+
+function showLightboxImage(index) {
+  if (!projectLightbox || !lightboxImages.length) return;
+  lightboxIndex = (index + lightboxImages.length) % lightboxImages.length;
+  const item = lightboxImages[lightboxIndex];
+  projectLightbox.querySelector('.project-lightbox-image').src = item.src;
+  projectLightbox.querySelector('.project-lightbox-image').alt = item.alt;
+  projectLightbox.querySelector('#project-lightbox-caption').textContent = item.caption;
+  const hasMultipleImages = lightboxImages.length > 1;
+  projectLightbox.querySelector('.project-lightbox-previous').hidden = !hasMultipleImages;
+  projectLightbox.querySelector('.project-lightbox-next').hidden = !hasMultipleImages;
+}
+
+function openLightbox(images, startIndex = 0) {
+  if (!projectLightbox || !images.length) return;
+  lightboxImages = images;
+  showLightboxImage(startIndex);
+  projectLightbox.showModal();
+}
+
+if (projectLightbox) {
+  projectLightbox.querySelector('.project-lightbox-close').addEventListener('click', () => projectLightbox.close());
+  projectLightbox.querySelector('.project-lightbox-previous').addEventListener('click', () => showLightboxImage(lightboxIndex - 1));
+  projectLightbox.querySelector('.project-lightbox-next').addEventListener('click', () => showLightboxImage(lightboxIndex + 1));
+  projectLightbox.addEventListener('click', (event) => {
+    if (event.target === projectLightbox) projectLightbox.close();
+  });
+}
+
 document.querySelectorAll('.project-filters').forEach((filterGroup) => {
   const buttons = filterGroup.querySelectorAll('[data-filter]');
   const cards = document.querySelectorAll('.project-card[data-category]');
+  const projectGrid = document.querySelector('.project-grid');
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
       const filter = button.dataset.filter;
+      if (projectLightbox?.open) projectLightbox.close();
+      const projectGallery = document.querySelector('#project-gallery');
+      if (projectGallery) projectGallery.hidden = true;
       buttons.forEach((item) => {
         const selected = item === button;
         item.classList.toggle('is-selected', selected);
         item.setAttribute('aria-pressed', String(selected));
       });
+      let categoryCardShown = false;
       cards.forEach((card) => {
-        card.hidden = filter !== 'all' && card.dataset.category !== filter;
+        const matchesCategory = card.dataset.category === filter;
+        const showCard = filter === 'all' || (matchesCategory && !categoryCardShown);
+        card.hidden = !showCard;
+        if (showCard && filter !== 'all') categoryCardShown = true;
       });
+      if (projectGrid) projectGrid.classList.toggle('is-category-view', filter !== 'all');
     });
   });
 });
+
+document.querySelectorAll('.project-grid .project-card > img').forEach((image) => {
+  image.addEventListener('click', () => {
+    const clickedCard = image.closest('.project-card');
+    const category = clickedCard.dataset.category;
+    const relatedImages = [...document.querySelectorAll(`.project-card[data-category="${category}"]`)]
+      .filter((card) => !card.hidden)
+      .map((card) => ({
+        src: card.querySelector('img').src,
+        alt: card.querySelector('img').alt,
+        caption: card.querySelector('h2, h3')?.textContent.trim() || card.querySelector('img').alt
+      }));
+    const clickedIndex = relatedImages.findIndex((item) => item.src === image.src);
+    openLightbox(relatedImages, Math.max(clickedIndex, 0));
+  });
+});
+
+const projectGallery = document.querySelector('#project-gallery');
+if (projectGallery) {
+  const galleryTitle = projectGallery.querySelector('#project-gallery-title');
+  const galleryGrid = projectGallery.querySelector('.project-gallery-grid');
+  let currentGalleryCategory = '';
+  const projectGalleryItems = {
+    web: {
+      title: 'Web Development Projects',
+      images: [
+        { src: '../images/project-web-design.png', alt: 'Web design project preview', caption: 'Web Design' }
+      ]
+    },
+    uiux: {
+      title: 'UI/UX Projects',
+      images: [
+        { src: 'ui/ux-picture1.png', alt: 'UI/UX project 1', caption: 'UI/UX Design' },
+        { src: 'ui/ux-picture2.png', alt: 'UI/UX project 2', caption: 'UI/UX Design' }
+      ]
+    },
+    graphic: {
+      title: 'Graphic Design Projects',
+      images: [
+        { src: 'graphic-pictur3.png', alt: 'Graphic design project', caption: 'Graphic Design' },
+        { src: 'my_grapc-picture2.png', alt: 'Graphic design project', caption: 'Graphic Design' },
+        { src: 'project-graphic1.png', alt: 'Graphic design project', caption: 'Graphic Design' }
+      ]
+    },
+    brand: {
+      title: 'Logo Projects',
+      images: [
+        { src: 'logo-picture1.png', alt: 'Logo design project', caption: 'Logo Design' },
+        { src: '../images/project-brand-logos.png', alt: 'Brand logo project preview', caption: 'Brand Logos' }
+      ]
+    },
+    video: {
+      title: 'Video Editing Projects',
+      images: [
+        { src: '../images/project-video-editing.png', alt: 'Video editing project preview', caption: 'Video Editing' }
+      ]
+    },
+    marketing: {
+      title: 'Marketing Projects',
+      images: [
+        { src: 'marketing-picture1.jpg', alt: 'Marketing design project', caption: 'Marketing Design' },
+        { src: '../images/project-branding.png', alt: 'Branding and marketing project preview', caption: 'Branding & Marketing' }
+      ]
+    }
+  };
+
+  galleryGrid.addEventListener('click', (event) => {
+    const image = event.target.closest('img');
+    if (!image) return;
+    const images = projectGalleryItems[currentGalleryCategory].images;
+    const clickedIndex = [...galleryGrid.querySelectorAll('img')].indexOf(image);
+    openLightbox(images, clickedIndex);
+  });
+
+  document.querySelectorAll('[data-gallery-category]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const gallery = projectGalleryItems[link.dataset.galleryCategory];
+      if (!gallery) return;
+
+      currentGalleryCategory = link.dataset.galleryCategory;
+      galleryTitle.textContent = gallery.title;
+      galleryGrid.replaceChildren();
+      gallery.images.forEach(({ src, alt, caption }) => {
+        const figure = document.createElement('figure');
+        figure.className = 'project-gallery-item';
+        const image = document.createElement('img');
+        image.src = src;
+        image.alt = alt;
+        image.loading = 'lazy';
+        const figcaption = document.createElement('figcaption');
+        figcaption.textContent = caption;
+        figure.append(image, figcaption);
+        galleryGrid.append(figure);
+      });
+
+      projectGallery.hidden = false;
+      projectGallery.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
 
 function setFormStatus(form, message, state) {
   const formStatus = form.querySelector('[data-form-status]');
@@ -149,7 +304,7 @@ document.querySelectorAll('[data-contact-form]').forEach((form) => {
 
     if (!form.reportValidity()) return;
 
-    const requiredFields = ['user_name', 'user_email', 'subject', 'message'];
+    const requiredFields = ['name', 'email', 'title', 'message'];
     const blankField = requiredFields
       .map((name) => form.elements.namedItem(name))
       .find((field) => !field.value.trim());
@@ -179,10 +334,18 @@ document.querySelectorAll('[data-contact-form]').forEach((form) => {
     setFormStatus(form, 'Sending your message...', 'pending');
 
     try {
-      await window.emailjs.sendForm(
+      const templateParams = {
+        name: form.elements.namedItem('name').value.trim(),
+        email: form.elements.namedItem('email').value.trim(),
+        title: form.elements.namedItem('title').value.trim(),
+        message: form.elements.namedItem('message').value.trim()
+      };
+
+      // Set the EmailJS template's Reply-To field to {{email}}.
+      await window.emailjs.send(
         EMAILJS_CONFIG.serviceId,
         EMAILJS_CONFIG.templateId,
-        form
+        templateParams
       );
       form.reset();
       setFormStatus(form, 'Your message was sent successfully. Thank you for getting in touch.', 'success');
