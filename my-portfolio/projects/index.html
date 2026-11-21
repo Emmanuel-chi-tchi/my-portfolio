@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#050508"><title>Emmanuel Chi | Projects</title><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../pages.css"><script src="../script.js" defer></script></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#050508"><title>Emmanuel Chi | Projects</title><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../pages.css"><script src="../script.js" defer></script><script type="module" src="reviews.js"></script></head>
 <body data-page="projects" data-root="../">
   <div data-site-header></div>
   <main class="projects-page">
@@ -10,16 +10,40 @@
       </div>
       <div class="project-grid">
         <article class="project-card" data-category="web"><img src="../images/project-web-design.png" alt="Website design project preview"><div><h2>Web Design</h2><p>Responsive and modern websites for businesses and more...</p><button class="see-album-button" type="button" data-gallery-category="web">See album</button></div></article>
-        <article class="project-card" data-category="brand"><img src="../images/project-brand-logos.png" alt="Brand logo project preview"><div><h2>Brand Logos</h2><p>Modern and attractive logo for brands and start ups...</p><button class="see-album-button" type="button" data-gallery-category="brand">See album</button></div></article>
-        <article class="project-card" data-category="graphic"><img src="../images/project-graphic-design.png" alt="Graphic design project preview"><div><h2>Graphic Design</h2><p>Design great business flyers, wedding, birthday, banners, and cover pages ...</p><button class="see-album-button" type="button" data-gallery-category="graphic">See album</button></div></article>
+        <article class="project-card" data-category="brand"><img src="../images/project-logo.png" alt="Aura Beauty Atelier logo design"><div><h2>Brand Logos</h2><p>Modern and attractive logo for brands and start ups...</p><button class="see-album-button" type="button" data-gallery-category="brand">See album</button></div></article>
+        <article class="project-card" data-category="graphic"><img src="../images/project-graphic-design1.png" alt="Graphic design project preview"><div><h2>Graphic Design</h2><p>Design great business flyers, wedding, birthday, banners, and cover pages ...</p><button class="see-album-button" type="button" data-gallery-category="graphic">See album</button></div></article>
         <article class="project-card" data-category="video"><img src="../images/project-video-editing.png" alt="Video camera mounted on a drone"><div><h2>Video editing</h2><p>Swift and attractive videos for businesses and events giving a feeling that you will never forget.</p><button class="see-album-button" type="button" data-gallery-category="video">See album</button></div></article>
-        <article class="project-card" data-category="marketing"><img src="../images/project-branding.png" alt="Emmanuel's Code brand logo"><div><h2>Branding &amp; Marketing</h2><p>Beautiful, modern and responsive websites.</p><button class="see-album-button" type="button" data-gallery-category="marketing">See album</button></div></article>
+        <article class="project-card" data-category="marketing"><img src="marketing-picture1.jpg" alt="Marketing design project"><div><h2>Branding &amp; Marketing</h2><p>Beautiful, modern and responsive websites.</p><button class="see-album-button" type="button" data-gallery-category="marketing">See album</button></div></article>
         <article class="project-card" data-category="uiux"><img src="ui/ux-picture1.png" alt="UI/UX project preview"><div><h2>UI/UX Design</h2><p>Beautiful, modern and responsive designs.</p><button class="see-album-button" type="button" data-gallery-category="uiux">See album</button></div></article>
         <article class="project-card" data-category="uiux"><img src="ui/ux-picture2.png" alt="Second UI/UX project preview"><div><h2>UI/UX Design</h2><p>Beautiful, modern and responsive designs.</p><button class="see-album-button" type="button" data-gallery-category="uiux">See album</button></div></article>
       </div>
       <section class="project-gallery" id="project-gallery" aria-labelledby="project-gallery-title" aria-live="polite" hidden>
         <h2 id="project-gallery-title"></h2>
         <div class="project-gallery-grid"></div>
+      </section>
+      <section class="reviews-section" id="reviews" aria-labelledby="reviews-title">
+        <div class="review-summary-view" data-summary-view>
+          <h2 id="reviews-title">Review</h2>
+          <div class="review-featured" data-featured-review aria-live="polite">Loading reviews...</div>
+          <button class="gradient-button review-open-button" type="button" data-open-reviews>Give Review</button>
+        </div>
+
+        <div class="reviews-all-view" data-reviews-view hidden>
+          <button class="review-back-button" type="button" data-back-to-projects>&larr; Back</button>
+          <h2>All Reviews</h2>
+          <div class="review-list" data-review-list aria-live="polite">Loading reviews...</div>
+          <form class="contact-form review-form" data-review-form>
+            <h3>Leave a Review</h3>
+            <label>Name<input name="name" type="text" autocomplete="name" maxlength="80" required></label>
+            <label>Type of work<select name="workType" required><option value="" selected disabled>Select type of work</option><option>Logo</option><option>Flyer</option><option>Logo + Flyer</option><option>Other</option></select></label>
+            <fieldset class="review-rating-field"><legend>Star Rating</legend><div class="review-stars" role="radiogroup" aria-label="Star rating" data-rating-picker>
+              <button type="button" role="radio" aria-checked="false" aria-label="1 star" data-rating="1">&#9733;</button><button type="button" role="radio" aria-checked="false" aria-label="2 stars" data-rating="2">&#9733;</button><button type="button" role="radio" aria-checked="false" aria-label="3 stars" data-rating="3">&#9733;</button><button type="button" role="radio" aria-checked="false" aria-label="4 stars" data-rating="4">&#9733;</button><button type="button" role="radio" aria-checked="false" aria-label="5 stars" data-rating="5">&#9733;</button>
+            </div><input name="rating" type="hidden" required><span class="review-rating-error" data-rating-error hidden>Please select a star rating.</span></fieldset>
+            <label>Review Comment<textarea name="comment" rows="5" maxlength="2000" required></textarea></label>
+            <button class="submit-button" type="submit">Send</button>
+            <p class="review-form-status" data-review-status aria-live="polite"></p>
+          </form>
+        </div>
       </section>
       <dialog class="project-lightbox" aria-labelledby="project-lightbox-caption">
         <button class="project-lightbox-close" type="button" aria-label="Close image viewer">&times;</button>

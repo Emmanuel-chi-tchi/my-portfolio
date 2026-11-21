@@ -73,7 +73,7 @@ if (headerTarget) {
     const current = currentPage === page ? ' aria-current="page"' : '';
     return `<a href="${pageUrl(page)}"${current}>${pageLabels[page]}</a>`;
   }).join('');
-  headerTarget.innerHTML = `<header class="site-header"><a class="brand" href="${pageUrl('home')}" aria-label="Home"><img src="${pageRoot}images/logo.png" alt="Emmanuel's Code Graphic Hub"></a><nav class="navigation" aria-label="Main navigation">${navItems}</nav><button class="cv-link" type="button" data-cv-download>Download CV</button></header>`;
+  headerTarget.innerHTML = `<header class="site-header"><a class="brand-lockup" href="${pageUrl('home')}" aria-label="Emmanuel's Code home"><span class="brand"><img src="${pageRoot}images/logo.png" alt=""></span><span class="brand-name">EMMANUEL's_CODE</span></a><nav class="navigation" aria-label="Main navigation">${navItems}</nav><button class="cv-link" type="button" data-cv-download>Download CV</button></header>`;
 }
 
 const footerTarget = document.querySelector('[data-site-footer]');
@@ -225,6 +225,7 @@ if (projectGallery) {
     graphic: {
       title: 'Graphic Design Projects',
       images: [
+        { src: '../images/project-graphic-design1.png', alt: 'Graphic design project preview', caption: 'Graphic Design' },
         { src: 'graphic-pictur3.png', alt: 'Graphic design project', caption: 'Graphic Design' },
         { src: 'my_grapc-picture2.png', alt: 'Graphic design project', caption: 'Graphic Design' },
         { src: 'project-graphic1.png', alt: 'Graphic design project', caption: 'Graphic Design' }
@@ -233,6 +234,7 @@ if (projectGallery) {
     brand: {
       title: 'Logo Projects',
       images: [
+        { src: '../images/project-logo.png', alt: 'Aura Beauty Atelier logo design', caption: 'Logo Design' },
         { src: 'logo-picture1.png', alt: 'Logo design project', caption: 'Logo Design' },
         { src: '../images/project-brand-logos.png', alt: 'Brand logo project preview', caption: 'Brand Logos' }
       ]
