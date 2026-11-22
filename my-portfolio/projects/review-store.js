@@ -30,7 +30,7 @@ export async function getApprovedReviews() {
   return data || [];
 }
 
-export async function submitPendingReview(review) {
+export async function submitReview(review) {
   if (!isSupabaseConfigured) throw new Error('Supabase is not configured.');
 
   const { error } = await supabase.from('reviews').insert({

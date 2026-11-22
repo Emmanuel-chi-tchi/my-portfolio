@@ -1,7 +1,7 @@
 import {
   getApprovedReviews,
   getLatestApprovedReview,
-  submitPendingReview
+  submitReview
 } from './review-store.js';
 import { isSupabaseConfigured } from './supabase-client.js';
 
@@ -151,7 +151,7 @@ reviewForm.addEventListener('submit', async (event) => {
   status.className = 'review-form-status';
   status.textContent = 'Sending your review...';
   try {
-    await submitPendingReview({
+    await submitReview({
       name: nameField.value.trim(),
       workType: workTypeField.value,
       rating: selectedRating,
@@ -159,9 +159,9 @@ reviewForm.addEventListener('submit', async (event) => {
     });
     reviewForm.reset();
     chooseRating(0);
-    status.textContent = 'Thank you! Your review was submitted for approval and will appear once approved.';
+    status.textContent = 'Thank you! Your review has been posted.';
     status.classList.add('is-success');
-    await refreshApprovedReviews();
+    await Promise.all([refreshApprovedReviews(), refreshLatestReview()]);
   } catch (error) {
     console.error('The review could not be submitted.', error);
     status.textContent = isSupabaseConfigured
