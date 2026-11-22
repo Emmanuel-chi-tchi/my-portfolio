@@ -12,7 +12,11 @@ const SITE_CONFIG = {
   }
 };
 
-const EMAILJS_CONFIG = window.EMAILJS_CONFIG || {};
+const EMAILJS_CONFIG = {
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || '',
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '',
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ''
+};
 const emailJsRequiredSettings = ['serviceId', 'templateId', 'publicKey'];
 const emailJsIsConfigured = emailJsRequiredSettings.every((setting) => (
   typeof EMAILJS_CONFIG[setting] === 'string' && EMAILJS_CONFIG[setting].trim().length > 0
