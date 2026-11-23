@@ -1,3 +1,18 @@
+import siteLogo from './images/logo.png';
+import projectWebDesignImage from './images/project-web-design.png';
+import uxPicture1 from './projects/ui/ux-picture1.png';
+import uxPicture2 from './projects/ui/ux-picture2.png';
+import graphicDesignImage from './images/project-graphic-design1.png';
+import graphicPicture3 from './images/graphic-pictur3.png';
+import graphicPicture2 from './projects/my_grapc-picture2.png';
+import graphicPicture1 from './projects/project-graphic1.png';
+import projectLogoImage from './images/project-logo.png';
+import logoPicture1 from './images/logo-picture1.png';
+import brandLogosImage from './images/project-brand-logos.png';
+import videoEditingImage from './images/project-video-editing.png';
+import marketingPicture1 from './projects/marketing-picture1.jpg';
+import brandingImage from './images/project-branding.png';
+
 /* Add a CV file path here when it is available. */
 const SITE_CONFIG = {
   cvUrl: '',
@@ -77,12 +92,12 @@ if (headerTarget) {
     const current = currentPage === page ? ' aria-current="page"' : '';
     return `<a href="${pageUrl(page)}"${current}>${pageLabels[page]}</a>`;
   }).join('');
-  headerTarget.innerHTML = `<header class="site-header"><a class="brand-lockup" href="${pageUrl('home')}" aria-label="Emmanuel's Code home"><span class="brand"><img src="${pageRoot}images/logo.png" alt=""></span><span class="brand-name">EMMANUEL's_CODE</span></a><nav class="navigation" aria-label="Main navigation">${navItems}</nav><button class="cv-link" type="button" data-cv-download>Download CV</button></header>`;
+  headerTarget.innerHTML = `<header class="site-header"><a class="brand-lockup" href="${pageUrl('home')}" aria-label="Emmanuel's Code home"><span class="brand"><img src="${siteLogo}" alt=""></span><span class="brand-name">EMMANUEL's_CODE</span></a><nav class="navigation" aria-label="Main navigation">${navItems}</nav><button class="cv-link" type="button" data-cv-download>Download CV</button></header>`;
 }
 
 const footerTarget = document.querySelector('[data-site-footer]');
 if (footerTarget) {
-  footerTarget.innerHTML = `<footer class="site-footer"><a class="footer-brand" href="${pageUrl('home')}"><img src="${pageRoot}images/logo.png" alt=""><span>EMMANUEL's CODE<br><b>Graphic_Hub</b></span></a><nav aria-label="Footer navigation">${Object.keys(pageRoutes).map((page) => `<a href="${pageUrl(page)}">${pageLabels[page]}</a>`).join('')}</nav><div class="footer-socials">${socialBadge('instagram', 'Instagram')}${socialBadge('linkedin', 'LinkedIn')}${socialBadge('facebook', 'Facebook')}${socialBadge('whatsapp', 'WhatsApp')}</div><p>2026 All rights reserved: <span>Emmanuel chi</span></p></footer>`;
+  footerTarget.innerHTML = `<footer class="site-footer"><a class="footer-brand" href="${pageUrl('home')}"><img src="${siteLogo}" alt=""><span>EMMANUEL's CODE<br><b>Graphic_Hub</b></span></a><nav aria-label="Footer navigation">${Object.keys(pageRoutes).map((page) => `<a href="${pageUrl(page)}">${pageLabels[page]}</a>`).join('')}</nav><div class="footer-socials">${socialBadge('instagram', 'Instagram')}${socialBadge('linkedin', 'LinkedIn')}${socialBadge('facebook', 'Facebook')}${socialBadge('whatsapp', 'WhatsApp')}</div><p>2026 All rights reserved: <span>Emmanuel chi</span></p></footer>`;
 }
 
 document.querySelectorAll('[data-brand-icon]').forEach((placeholder) => {
@@ -216,44 +231,44 @@ if (projectGallery) {
     web: {
       title: 'Web Development Projects',
       images: [
-        { src: '../images/project-web-design.png', alt: 'Web design project preview', caption: 'Web Design' }
+        { src: projectWebDesignImage, alt: 'Web design project preview', caption: 'Web Design' }
       ]
     },
     uiux: {
       title: 'UI/UX Projects',
       images: [
-        { src: 'ui/ux-picture1.png', alt: 'UI/UX project 1', caption: 'UI/UX Design' },
-        { src: 'ui/ux-picture2.png', alt: 'UI/UX project 2', caption: 'UI/UX Design' }
+        { src: uxPicture1, alt: 'UI/UX project 1', caption: 'UI/UX Design' },
+        { src: uxPicture2, alt: 'UI/UX project 2', caption: 'UI/UX Design' }
       ]
     },
     graphic: {
       title: 'Graphic Design Projects',
       images: [
-        { src: '../images/project-graphic-design1.png', alt: 'Graphic design project preview', caption: 'Graphic Design' },
-        { src: '../images/graphic-pictur3.png', alt: 'Graphic design project', caption: 'Graphic Design' },
-        { src: 'my_grapc-picture2.png', alt: 'Graphic design project', caption: 'Graphic Design' },
-        { src: 'project-graphic1.png', alt: 'Graphic design project', caption: 'Graphic Design' }
+        { src: graphicDesignImage, alt: 'Graphic design project preview', caption: 'Graphic Design' },
+        { src: graphicPicture3, alt: 'Graphic design project', caption: 'Graphic Design' },
+        { src: graphicPicture2, alt: 'Graphic design project', caption: 'Graphic Design' },
+        { src: graphicPicture1, alt: 'Graphic design project', caption: 'Graphic Design' }
       ]
     },
     brand: {
       title: 'Logo Projects',
       images: [
-        { src: '../images/project-logo.png', alt: 'Aura Beauty Atelier logo design', caption: 'Logo Design' },
-        { src: '../images/logo-picture1.png', alt: 'Logo design project', caption: 'Logo Design' },
-        { src: '../images/project-brand-logos.png', alt: 'Brand logo project preview', caption: 'Brand Logos' }
+        { src: projectLogoImage, alt: 'Aura Beauty Atelier logo design', caption: 'Logo Design' },
+        { src: logoPicture1, alt: 'Logo design project', caption: 'Logo Design' },
+        { src: brandLogosImage, alt: 'Brand logo project preview', caption: 'Brand Logos' }
       ]
     },
     video: {
       title: 'Video Editing Projects',
       images: [
-        { src: '../images/project-video-editing.png', alt: 'Video editing project preview', caption: 'Video Editing' }
+        { src: videoEditingImage, alt: 'Video editing project preview', caption: 'Video Editing' }
       ]
     },
     marketing: {
       title: 'Marketing Projects',
       images: [
-        { src: 'marketing-picture1.jpg', alt: 'Marketing design project', caption: 'Marketing Design' },
-        { src: '../images/project-branding.png', alt: 'Branding and marketing project preview', caption: 'Branding & Marketing' }
+        { src: marketingPicture1, alt: 'Marketing design project', caption: 'Marketing Design' },
+        { src: brandingImage, alt: 'Branding and marketing project preview', caption: 'Branding & Marketing' }
       ]
     }
   };
