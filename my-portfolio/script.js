@@ -230,7 +230,7 @@ if (projectGallery) {
       title: 'Graphic Design Projects',
       images: [
         { src: '../images/project-graphic-design1.png', alt: 'Graphic design project preview', caption: 'Graphic Design' },
-        { src: 'graphic-pictur3.png', alt: 'Graphic design project', caption: 'Graphic Design' },
+        { src: '../images/graphic-pictur3.png', alt: 'Graphic design project', caption: 'Graphic Design' },
         { src: 'my_grapc-picture2.png', alt: 'Graphic design project', caption: 'Graphic Design' },
         { src: 'project-graphic1.png', alt: 'Graphic design project', caption: 'Graphic Design' }
       ]
@@ -239,7 +239,7 @@ if (projectGallery) {
       title: 'Logo Projects',
       images: [
         { src: '../images/project-logo.png', alt: 'Aura Beauty Atelier logo design', caption: 'Logo Design' },
-        { src: 'logo-picture1.png', alt: 'Logo design project', caption: 'Logo Design' },
+        { src: '../images/logo-picture1.png', alt: 'Logo design project', caption: 'Logo Design' },
         { src: '../images/project-brand-logos.png', alt: 'Brand logo project preview', caption: 'Brand Logos' }
       ]
     },
